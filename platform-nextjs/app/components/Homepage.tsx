@@ -1,4 +1,5 @@
 import getAllMovies from "@/lib/getAllMovies";
+import Link from "next/link";
 
 const Homepage = async() => {
 
@@ -15,11 +16,15 @@ const Homepage = async() => {
                 </div>
                 <div className="w-full min-h-screen flex justify-center">
                     <div className="w-[95%] h-[90%] px-5 flex flex-wrap justify-start gap-x-2 gap-y-2">
-                        {movies.map((movie => (
-                            <div key={movie.id} className="w-[13.5%] h-[40%] overflow-hidden rounded-2xl shadow-md">
-                                <img className="w-full h-full" src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="" />
-                            </div>
-                        )))}
+                        {movies.length > 0 ? (<>
+                            {movies.map((movie => (
+                                <div key={movie.id} className="w-[13.5%] h-[40%] overflow-hidden rounded-2xl shadow-md">
+                                    <Link href={`/movie/${movie.id}`}><img className="w-full h-full" src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="" /></Link>
+                                </div>
+                            )))}
+                        </>) : (<>
+                            <p className="m-auto text-2xl">Movies not found.</p>
+                        </>)}
                     </div>
                 </div>
             </div>
