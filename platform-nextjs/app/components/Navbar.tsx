@@ -1,7 +1,7 @@
 const Navbar = () => {
     return (
         <>
-            <nav className="w-full h-14 backdrop-blur-3xl sticky bg-slate-800/95 flex justify-evenly">
+            <nav className="w-full h-14 backdrop-blur-3xl sticky bg-slate-800/95 flex justify-evenly shadow-2xl">
                 <div className="w-1/6 h-full flex items-center justify-center">
                     <p className="text-xl text-cyan-300 cursor-pointer">Flix</p>
                 </div>
