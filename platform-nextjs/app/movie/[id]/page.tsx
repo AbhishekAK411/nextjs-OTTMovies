@@ -1,6 +1,8 @@
 import getSingleMovie from "@/lib/getSingleMovie"
 import getSingleMovieCast from "@/lib/getSingleMovieCast"
 import type { Metadata } from "next"
+import { Suspense } from "react";
+import Loading from "../loading";
 
 type Params = {
     params: {
@@ -24,12 +26,15 @@ const Singlemovie = async({params: {id}}: Params) => {
     const singleCast: Promise<Singlecast> = getSingleMovieCast(id);
 
     const [movie, cast] = await Promise.all([singleMovie, singleCast]);
-
     return (
         <>
-            <main className="bg-slate-300 w-full min-h-screen">
-
-            </main>
+            <Suspense fallback={<><Loading /></>}>
+                <main className="bg-slate-300 w-full h-screen relative">
+                    <div style={{backgroundImage: `url('https://image.tmdb.org/t/p/w500/${movie.backdrop_path}')`}} className="absolute top-0 -z-0 w-full h-full bg-fixed bg-center bg-no-repeat bg-cover"></div>
+                    <div className="absolute top-0 z-10 w-full h-full bg-black bg-opacity-20 backdrop-blur-lg drop-shadow-lg"></div>
+                    <div className="relative top-full w-full h-screen border-black border"></div>
+                </main>
+            </Suspense>
         </>
     )
 }
