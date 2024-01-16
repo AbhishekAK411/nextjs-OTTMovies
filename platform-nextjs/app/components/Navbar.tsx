@@ -1,15 +1,15 @@
 const Navbar = () => {
     return (
         <>
-            <nav className="w-full h-14 backdrop-blur-3xl sticky bg-slate-800/95 flex justify-evenly shadow-2xl">
+            <nav className="w-full h-14 flex justify-evenly fixed z-10 border-slate-900/10 border-b backdrop-blur-lg">
                 <div className="w-1/6 h-full flex items-center justify-center">
-                    <p className="text-xl text-cyan-300 cursor-pointer">Flix</p>
+                    <p className="text-lg text-slate-950 cursor-pointer">Flix</p>
                 </div>
                 <div className="w-8/12 h-full flex justify-evenly">
                     <div className="w-6/12 h-full flex items-center justify-evenly">
-                        <p className="text-lg text-cyan-300 hover:underline hover:underline-offset-4 cursor-pointer">Top Rated</p>
-                        <p className="text-lg text-cyan-300 hover:underline hover:underline-offset-4 cursor-pointer">Popular</p>
-                        <p className="text-lg text-cyan-300 hover:underline hover:underline-offset-4 cursor-pointer">Upcoming</p>
+                        <p className="text-base text-slate-950 cursor-pointer">Top Rated</p>
+                        <p className="text-base text-slate-950 cursor-pointer">Popular</p>
+                        <p className="text-base text-slate-950 cursor-pointer">Upcoming</p>
                     </div>
                     <div className="w-5/12 h-full flex items-center justify-center relative">
                         <input className="w-9/12 h-[60%] p-2 rounded-md focus:outline-none text-sm" placeholder="Search" />

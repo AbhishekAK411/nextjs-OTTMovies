@@ -29,11 +29,11 @@ const Singlemovie = async({params: {id}}: Params) => {
     return (
         <>
             <Suspense fallback={<><Loading /></>}>
-                <main className="bg-slate-300 w-full h-screen relative">
-                    <div style={{backgroundImage: `url('https://image.tmdb.org/t/p/w500/${movie.backdrop_path}')`}} className="absolute top-0 -z-0 w-full h-full bg-fixed bg-center bg-no-repeat bg-cover "></div>
-                    <div className="absolute top-0 z-10 w-full h-full bg-black bg-opacity-20 backdrop-blur-lg drop-shadow-lg"></div>
-                    <div className=" relative top-full w-full h-screen bg-gradient-to-t from-slate-200 to-slate-700">
-                        
+                <main className="bg-slate-300 w-full min-h-screen relative">
+                    <div className="w-full h-screen border-black border flex">
+                        <div className="w-1/3 h-full border-black border"></div>
+                        <div className="w-1/3 h-full border-black border"></div>
+                        <div className="w-1/3 h-full border-black border"></div>
                     </div>
                 </main>
             </Suspense>
