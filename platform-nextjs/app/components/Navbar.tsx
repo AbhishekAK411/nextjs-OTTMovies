@@ -1,15 +1,17 @@
+import Link from "next/link";
+
 const Navbar = () => {
     return (
         <>
             <nav className="w-full h-14 flex justify-evenly fixed z-10 border-slate-900/10 border-b backdrop-blur-lg">
                 <div className="w-1/6 h-full flex items-center justify-center">
-                    <p className="text-lg text-slate-950 cursor-pointer">Flix</p>
+                    <Link href="/"><p className="text-lg text-slate-950 cursor-pointer">Flix</p></Link>
                 </div>
                 <div className="w-8/12 h-full flex justify-evenly">
                     <div className="w-6/12 h-full flex items-center justify-evenly">
-                        <p className="text-base text-slate-950 cursor-pointer">Top Rated</p>
-                        <p className="text-base text-slate-950 cursor-pointer">Popular</p>
-                        <p className="text-base text-slate-950 cursor-pointer">Upcoming</p>
+                        <Link href="/top"><p className="text-base text-slate-950 cursor-pointer">Top Rated</p></Link>
+                        <Link href="/"><p className="text-base text-slate-950 cursor-pointer">Popular</p></Link>
+                        <Link href="/upcoming"><p className="text-base text-slate-950 cursor-pointer">Upcoming</p></Link>
                     </div>
                     <div className="w-5/12 h-full flex items-center justify-center relative">
                         <input className="w-9/12 h-[60%] p-2 rounded-md focus:outline-none text-sm" placeholder="Search" />
