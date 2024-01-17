@@ -3,6 +3,7 @@ import getSingleMovieCast from "@/lib/getSingleMovieCast"
 import type { Metadata } from "next"
 import { Suspense } from "react";
 import Loading from "../loading";
+import Detailsegment from "@/app/components/Detailsegment";
 
 type Params = {
     params: {
@@ -29,11 +30,22 @@ const Singlemovie = async({params: {id}}: Params) => {
     return (
         <>
             <Suspense fallback={<><Loading /></>}>
-                <main className="bg-slate-300 w-full min-h-screen relative">
-                    <div className="w-full h-screen border-black border flex">
-                        <div className="w-1/3 h-full border-black border"></div>
-                        <div className="w-1/3 h-full border-black border"></div>
-                        <div className="w-1/3 h-full border-black border"></div>
+                <main className=" bg-slate-300 w-full min-h-screen relative">
+                    <div className="w-full h-screen flex">
+                        <div className="w-1/3 h-full flex items-center justify-center">
+                            <div className="w-[65%] h-[70%] rounded-xl shadow-lg overflow-hidden">
+                                <img
+                                    src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                                    alt="movie_image"
+                                    className="w-full h-full"
+                                />
+                            </div>
+                        </div>
+                        <div className="w-2/3 h-full flex items-center">
+                            <div className="w-[90%] h-[70%]">
+                                <Detailsegment movieProps={movie} />
+                            </div>
+                        </div>
                     </div>
                 </main>
             </Suspense>
